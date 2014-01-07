@@ -14,6 +14,7 @@ public class HelloMoonFragment extends Fragment {
 
     private AudioPlayer mPlayer = new AudioPlayer();
     private Button mPlayButton;
+    private Button mPauseButton;
     private Button mStopButton;
 
     @Override
@@ -25,6 +26,13 @@ public class HelloMoonFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 mPlayer.play(getActivity());
+            }
+        });
+        mPauseButton = (Button)v.findViewById(R.id.hellomoon_pauseButton);
+        mPauseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPlayer.paused();
             }
         });
         mStopButton = (Button)v.findViewById(R.id.hellomoon_stopButton);
