@@ -17,6 +17,13 @@ public class HelloMoonFragment extends Fragment {
     private Button mStopButton;
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_hello_moon, container, false);
 
@@ -36,6 +43,8 @@ public class HelloMoonFragment extends Fragment {
         });
 
         return v;
+
+
     }
 
     @Override
